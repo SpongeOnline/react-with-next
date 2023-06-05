@@ -1,6 +1,6 @@
 import RootLayout from "./RootLayout"
-import { useLayoutEffect  } from 'react';
-import './reset.css';
+import { useEffect  } from 'react';
+import '@root/public/reset.css';
 
 export default function HomePage() {
   const appFrameStyles = {
@@ -8,7 +8,7 @@ export default function HomePage() {
     weight: '100%'
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // Your code here
     document.getElementById('__next').classList.add('__next-login-page');
   }, []);

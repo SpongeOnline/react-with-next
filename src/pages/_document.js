@@ -2,7 +2,6 @@
 // Added this file to override some default properties about the init html/body
 import { Html, Head, Main, NextScript } from 'next/document';
 
-
 export default function Document() {
     const styles = {
       html: {height: '100%', weight: '100%'},

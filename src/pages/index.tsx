@@ -1,4 +1,4 @@
-import RootLayout from "./RootLayout"
+import MemeberList from "./MemeberList"
 import { useEffect  } from 'react';
 import '@root/public/reset.css';
 
@@ -10,18 +10,17 @@ export default function HomePage() {
 
   useEffect(() => {
     // Your code here
-    document.getElementById('__next').classList.add('__next-login-page');
+    if (typeof document !== 'undefined' && document !== null) {
+      var cod = document.getElementById('__next');
+      if(typeof cod !== 'undefined' && cod !== null) {
+        cod.classList.add('__next-login-page');
+      }
+    }
   }, []);
 
   return (
     <div id="app" style={appFrameStyles}>
-      <style jsx global>{`
-          .__next-login-page {
-            height: 100%;
-            weight: 100%;
-          }
-        `}</style>
-      <RootLayout></RootLayout>
+      <MemeberList></MemeberList>
     </div>
   )
 }

@@ -1,11 +1,18 @@
-import MemeberList from "./MemeberList"
+import Selector from "./Selector"
 import { useEffect  } from 'react';
 import '@root/public/reset.css';
 
 export default function HomePage() {
   const appFrameStyles = {
-    height: '100%',
-    weight: '100%'
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    display: 'flex',
+    overflow: 'hidden',
+    'justify-content': 'center',
+    'align-items': 'center'
   }
 
   useEffect(() => {
@@ -20,7 +27,7 @@ export default function HomePage() {
 
   return (
     <div id="app" style={appFrameStyles}>
-      <MemeberList></MemeberList>
+      <Selector></Selector>
     </div>
   )
 }

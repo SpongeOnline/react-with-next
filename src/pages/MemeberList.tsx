@@ -1,10 +1,11 @@
 export default function MemeberList() {
 
   const styls = {
-    display: 'block',
-    width: '100%',
-    height: '100%',
-    border: '1px solid black'
+    display: 'flex',
+    overflow: 'hidden',
+    border: '1px solid black',
+    'justify-content': 'center',
+    'align-items': 'center'
   }
 
   const circles = {
@@ -13,7 +14,7 @@ export default function MemeberList() {
   }
 
   const data = [
-    {},{},{},{}
+    {},{},{},{},{},{},{},{},{},{}
   ]
 
   const setData = (data: any)=> {
@@ -38,16 +39,17 @@ export default function MemeberList() {
     ustifyContent: 'space-between'
   }
 
+  const componentList = data.map((item, index) => {
+    return <div onClick={handleClick} style={circle} key={index} />;
+  });
+
   return (
     <div style={styls}>
-      <div style={circles}>
-       
-          <div onClick={handleClick} style={circle}></div>
-          <div onClick={handleClick} style={circle}></div>
-          <div onClick={handleClick} style={circle}></div>
-          <div onClick={handleClick} style={circle}></div>
-        
-      </div>
+        {
+          data.map((item, index) => {
+            return <div onClick={handleClick} style={circle} key={index} />;
+          })
+        }
     </div>
   )
 }
